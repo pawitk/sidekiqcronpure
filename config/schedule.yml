@@ -2,3 +2,5 @@ echo_job:
   cron: "* * * * *"
   class: "ExecWorker"
   queue: default
+  args:
+    cmd: "echo 'Hello sidekiq cron!'"

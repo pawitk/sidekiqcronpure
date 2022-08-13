@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "sidekiq"
-gem "sidekiq-cron"
+gem "sidekiq", "~> 6.5"
+gem "sidekiq-cron", "~> 1.7"
 gem "puma", "~> 5.6"
+gem "redis-namespace", "~> 1.8"

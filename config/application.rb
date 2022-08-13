@@ -5,6 +5,12 @@ Bundler.require
 
 ENV["RACK_ENV"] ||= "development"
 
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__),'..')
+
+Dir.glob(File.join(File.dirname(__FILE__), '../app/**/*.rb')).each do |fname|
+  load fname
+end
+
 module SidekiqCronPure
  class Application
    def self.root

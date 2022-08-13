@@ -14,6 +14,8 @@ GEM
     raabro (1.4.0)
     rack (2.2.4)
     redis (4.7.1)
+    redis-namespace (1.8.2)
+      redis (>= 3.0.4)
     sidekiq (6.5.4)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -30,8 +32,9 @@ PLATFORMS
 
 DEPENDENCIES
   puma (~> 5.6)
-  sidekiq
-  sidekiq-cron
+  redis-namespace (~> 1.8)
+  sidekiq (~> 6.5)
+  sidekiq-cron (~> 1.7)
 
 RUBY VERSION
    ruby 3.1.2p20

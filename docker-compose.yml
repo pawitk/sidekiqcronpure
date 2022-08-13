@@ -9,8 +9,6 @@ services:
       - REDIS_URL=redis://redis:6379
     links:
       - redis
-    ports:
-      - "3000:3000"
 
   sidekiqui:
     build: .
@@ -21,7 +19,7 @@ services:
     links:
       - redis
     ports:
-      - "3000:3000"
+      - "9292:9292"
   
   redis:
     image: redis
