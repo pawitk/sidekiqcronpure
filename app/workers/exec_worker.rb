@@ -1,9 +1,9 @@
 class ExecWorker
   include Sidekiq::Worker
 
-  def perform(*args)
-    puts "Executing command `#{args.first['cmd']}`"
-    puts `#{args.first['cmd']}`
-    puts "Done command `#{args.first['cmd']}`"
+  def perform(args)
+    puts "Executing command `#{args['cmd']}`"
+    puts `#{args['cmd']}`
+    puts "Done command `#{args['cmd']}`"
   end
 end
