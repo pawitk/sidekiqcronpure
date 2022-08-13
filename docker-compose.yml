@@ -1,0 +1,27 @@
+version: '3'
+services:
+  sidekiqrunner:
+    build: .
+    command: "bundle exec sidekiq -e production -r ./config/application.rb -C ./config/sidekiq.yml"
+    volumes:
+      - ./:/app
+    environment:
+      - REDIS_URL=redis://redis:6379
+    links:
+      - redis
+    ports:
+      - "3000:3000"
+
+  sidekiqui:
+    build: .
+    volumes:
+      - ./:/app
+    environment:
+      - REDIS_URL=redis://redis:6379
+    links:
+      - redis
+    ports:
+      - "3000:3000"
+  
+  redis:
+    image: redis

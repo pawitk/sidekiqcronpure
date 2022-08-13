@@ -1,0 +1,4 @@
+echo_job:
+  cron: "* * * * *"
+  class: "ExecWorker"
+  queue: default
